@@ -11,126 +11,182 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <style>:root{--ink:#152126;--muted:#6b7c82;--line:#e3e9e8;--paper:#fff;--canvas:#f4f7f6;--teal:#0f938d;--teal-dark:#08716d;--aqua:#d9f1ee;--orange:#ef9a4b;--red:#dc5b52;--blue:#4c83c4;font-family:"Noto Sans SC",Arial,sans-serif;color:var(--ink);background:var(--canvas)}*{box-sizing:border-box}body{margin:0;background:var(--canvas);min-width:320px}.sidebar{background:#132b32;color:#eaf4f2;position:fixed;inset:0 auto 0 0;width:230px;display:flex;flex-direction:column;padding:28px 14px 20px;z-index:2}.brand{font-size:18px;font-weight:700;display:flex;align-items:center;gap:11px;padding:0 12px 36px}.brand-mark{font-family:"DM Mono",monospace;font-size:12px;letter-spacing:0;border:1px solid #75c6bf;border-radius:5px;padding:5px 4px;color:#94ddd5}.sidebar nav{display:grid;gap:5px}.nav-item{color:#a9c0c1;text-decoration:none;min-height:44px;display:flex;align-items:center;gap:13px;padding:0 12px;border-radius:6px;font-size:14px;transition:.18s}.nav-item span{font-size:19px;width:18px;text-align:center}.nav-item:hover,.nav-item.active{color:#fff;background:#21434a}.nav-item.active{box-shadow:inset 3px 0 #4cc6bb}.nav-item b{margin-left:auto;background:#db746a;color:#fff;border-radius:10px;font:11px "DM Mono";padding:2px 6px}.side-bottom{margin-top:auto;border-top:1px solid #315057;padding:18px 12px 0}.data-state{display:flex;align-items:center;gap:7px;color:#a9c0c1;font-size:11px;white-space:nowrap}.data-state i{height:7px;width:7px;background:#57c4a4;border-radius:50%;box-shadow:0 0 0 3px rgba(87,196,164,.12)}.data-state small{margin-left:auto;font:10px "DM Mono";color:#759296}.avatar{margin-top:20px;background:#37616a;border:0;color:#fff;font:12px "DM Mono";width:34px;height:34px;border-radius:50%;cursor:pointer}main{margin-left:230px;padding:32px 38px 48px;max-width:1750px}.topbar{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:23px}.eyebrow{font-size:12px;color:var(--teal);font-weight:600;margin:0 0 5px}h1,h2,p{margin:0}h1{font-size:27px;line-height:1.25;letter-spacing:0}h2{font-size:16px;line-height:1.3}.top-actions{display:flex;align-items:center;gap:10px}button{font:inherit;cursor:pointer}.icon-button,.date-button,.export-button,.filter{border:1px solid var(--line);background:#fff;color:#35464b;border-radius:5px;height:36px}.icon-button{width:36px;position:relative;font-size:20px;line-height:1}.notification{position:absolute;width:7px;height:7px;background:var(--red);border:1px solid #fff;border-radius:50%;right:8px;top:7px}.date-button{padding:0 11px;font-size:13px}.export-button{border-color:var(--teal);background:var(--teal);color:#fff;padding:0 13px;font-size:13px;font-weight:600}.filters{display:flex;gap:8px;align-items:center;margin-bottom:22px}.filter{height:32px;padding:0 10px;font-size:12px}.filter.active{border-color:#9ddbd5;background:#edf9f7;color:var(--teal-dark);font-weight:600}.updated{margin-left:auto;font:11px "DM Mono";color:#839196}.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:14px}.kpi{background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:17px 18px 14px;min-height:125px}.kpi-label{font-size:12px;color:var(--muted);display:flex;gap:5px;align-items:center}.info{font:10px Georgia;border:1px solid #aab8ba;border-radius:50%;color:#778b90;background:#fff;width:14px;height:14px;padding:0}.kpi strong{font-family:"DM Mono",monospace;font-size:24px;display:block;margin:12px 0 7px;letter-spacing:0}.kpi em,.pace-stat em,.guest-stats em{font-style:normal;font-size:.58em;margin-left:1px}.kpi p{font:11px "DM Mono"}.kpi p span{font-family:"Noto Sans SC";color:#88969a;margin-left:2px}.positive{color:#11906e}.negative{color:#d1574d}.dashboard-grid{display:grid;grid-template-columns:1.24fr .76fr;gap:14px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:18px 20px;min-width:0}.panel-head{display:flex;align-items:flex-start;justify-content:space-between}.panel-head p{font-size:11px;color:#829095;margin-top:4px}.more{border:0;background:transparent;color:#718187;font-size:15px;letter-spacing:2px;padding:0 0 3px}.text-action{color:var(--teal-dark);font-size:12px;background:transparent;border:0;padding:1px 0}.chart-meta{display:flex;gap:16px;align-items:center;margin:22px 0 4px;font-size:11px;color:#69797e}.legend{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:5px}.legend.actual{background:var(--teal)}.legend.budget{background:#aababc}.chart-total{margin-left:auto;font:11px "DM Mono";color:#6d7f84}.line-chart{height:270px;position:relative;padding:0 0 21px 33px}.line-chart svg{width:100%;height:100%;overflow:visible}.gridlines path{stroke:#e9eeee;stroke-width:1}.actual-line{fill:none;stroke:var(--teal);stroke-width:3}.budget-line{fill:none;stroke:#9daeb1;stroke-width:2;stroke-dasharray:5 5}.area{fill:url(#area)}.point{fill:#fff;stroke:var(--teal);stroke-width:3}.y-axis{position:absolute;left:0;top:-5px;height:calc(100% - 20px);display:flex;flex-direction:column;justify-content:space-between;font:10px "DM Mono";color:#819095}.x-axis{position:absolute;left:33px;right:0;bottom:0;display:flex;justify-content:space-between;font:10px "DM Mono";color:#819095}.pace-stat{display:flex;gap:9px;align-items:baseline;margin:23px 0 19px}.pace-stat strong{font:25px "DM Mono"}.pace-stat span{font:11px "DM Mono"}.pace-bars{display:grid;gap:13px}.pace-bars div{display:grid;grid-template-columns:50px 1fr 30px;align-items:center;gap:8px;font-size:11px;color:#69797e}.pace-bars b{display:block;background:#e8efee;height:7px;border-radius:4px;overflow:hidden}.pace-bars i{display:block;background:var(--teal);height:100%;border-radius:4px}.pace-bars em{font:11px "DM Mono";font-style:normal;text-align:right;color:#43555a}.pace-callout{margin-top:20px;padding:10px;background:#f5f9f8;display:flex;gap:9px;align-items:center}.pace-callout>span{width:17px;height:17px;display:grid;place-items:center;border-radius:50%;background:#fbe9db;color:#c76a1e;font:600 12px Georgia}.pace-callout p{font-size:11px;line-height:1.5;flex:1;color:#5a6b6f}.pace-callout p b{color:#36464a}.pace-callout button{background:none;border:0;color:#6f8185;font-size:19px}.portfolio-panel,.channel-panel{min-height:270px}.region-list{margin-top:15px}.region-list>div{display:grid;grid-template-columns:1fr 1.15fr .7fr;align-items:center;border-top:1px solid #edf1f0;padding:11px 0}.region-name{font-size:12px;font-weight:600;display:flex;align-items:center;gap:8px}.region-name:before{content:"";width:7px;height:7px;border-radius:2px;background:var(--teal)}.region-name.south:before{background:#4d87c5}.region-name.north:before{background:#d79857}.region-name.west:before{background:#aa78a6}.region-data{display:flex;gap:8px;align-items:baseline}.region-data strong{font:13px "DM Mono"}.region-data span{font:10px "DM Mono"}.region-list small{font-size:10px;color:#839196;text-align:right}.donut-wrap{display:flex;align-items:center;gap:29px;margin-top:22px}.donut{width:146px;aspect-ratio:1;border-radius:50%;background:conic-gradient(var(--teal) 0 38.4%,#5d91c7 38.4% 68%,#dfa05d 68% 89.2%,#9a7cb1 89.2% 100%);display:grid;place-items:center;flex:none}.donut>div{width:98px;aspect-ratio:1;border-radius:50%;background:#fff;display:grid;place-content:center;text-align:center}.donut strong{font:15px "DM Mono"}.donut span{font-size:10px;color:#7d8e92}.donut-wrap ul{margin:0;padding:0;list-style:none;width:100%;display:grid;gap:11px}.donut-wrap li{font-size:11px;color:#5e7075;display:grid;grid-template-columns:10px 1fr auto;align-items:center;gap:6px}.donut-wrap li i{height:8px;width:8px;border-radius:2px}.direct{background:var(--teal)}.ota{background:#5d91c7}.corp{background:#dfa05d}.group{background:#9a7cb1}.donut-wrap li b{font:11px "DM Mono";color:#33454a}.alert-list{margin-top:10px}.alert-row{width:100%;background:transparent;border:0;border-top:1px solid #edf1f0;padding:11px 0;display:grid;grid-template-columns:27px 1fr 28px 12px;align-items:center;gap:8px;text-align:left}.alert-icon{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;font:600 12px Georgia}.high .alert-icon{background:#fde9e6;color:#cc5147}.medium .alert-icon{background:#fff2df;color:#bd731d}.alert-row b{font-size:12px;font-weight:600}.alert-row p{font-size:10px;color:#829095;margin-top:3px}.alert-row em{font-size:10px;font-style:normal;text-align:center;border-radius:3px;padding:2px}.high em{color:#c64f45;background:#fde9e6}.medium em{color:#b9711d;background:#fff2df}.alert-row>span:last-child{font-size:19px;color:#819095}.guest-panel{grid-column:span 2}.guest-stats{display:grid;grid-template-columns:repeat(3,1fr);margin:19px 0 16px}.guest-stats>div{border-right:1px solid #edf1f0;padding:0 22px}.guest-stats>div:first-child{padding-left:0}.guest-stats>div:last-child{border:0}.guest-stats strong{font:20px "DM Mono";display:block}.guest-stats span{display:block;font-size:11px;color:#78898e;margin:5px 0}.guest-stats p{font:10px "DM Mono"}.guest-footer{border-top:1px solid #edf1f0;padding-top:13px;display:flex;align-items:center}.mini-avatar{height:25px;width:25px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-size:10px;color:#fff;margin-right:-6px}.a1{background:#b97a60}.a2{background:#628fa4}.a3{background:#746aa2}.guest-footer p{font-size:11px;color:#647579;margin-left:14px}.guest-footer b{color:#25383d}.guest-footer button{margin-left:auto;background:transparent;border:0;color:var(--teal-dark);font-size:11px}.toast{position:fixed;right:28px;bottom:25px;transform:translateY(90px);background:#143037;color:#fff;border-radius:5px;padding:11px 15px;font-size:13px;box-shadow:0 8px 25px rgba(20,48,55,.2);transition:transform .25s}.toast.show{transform:translateY(0)}
 @media(max-width:1120px){.kpis{grid-template-columns:repeat(3,1fr)}.dashboard-grid{grid-template-columns:1fr}.guest-panel{grid-column:auto}.sidebar{width:190px}main{margin-left:190px;padding:28px 24px}.portfolio-panel,.channel-panel{min-height:auto}}
-@media(max-width:760px){.sidebar{position:static;width:auto;height:auto;padding:15px 16px;display:block}.brand{padding:0;margin-bottom:14px}.sidebar nav{grid-template-columns:repeat(5,1fr);overflow:auto}.nav-item{font-size:0;padding:0;justify-content:center}.nav-item span{font-size:20px}.nav-item b,.side-bottom{display:none}main{margin:0;padding:22px 15px}.topbar{align-items:flex-start;gap:15px}.top-actions{flex-wrap:wrap;justify-content:flex-end}.date-button{font-size:11px}.export-button{font-size:0;width:36px;padding:0}.export-button span{font-size:17px}.filters{overflow:auto;padding-bottom:3px}.updated{display:none}.kpis{grid-template-columns:repeat(2,1fr);gap:9px}.kpi:last-child{grid-column:span 2}.kpi{min-height:112px;padding:14px}.kpi strong{font-size:20px}.panel{padding:16px}.line-chart{height:220px}.donut-wrap{gap:16px}.donut{width:125px}.donut>div{width:84px}.guest-stats>div{padding:0 10px}.guest-stats strong{font-size:16px}.guest-footer p{font-size:10px}.region-list>div{grid-template-columns:1fr 1fr .65fr}}
+@media(max-width:760px){.sidebar{position:static;width:auto;height:auto;padding:15px 16px;display:block}.brand{padding:0;margin-bottom:14px}.sidebar nav{grid-template-columns:repeat(4,1fr);overflow:auto}.nav-item{font-size:0;padding:0;justify-content:center}.nav-item span{font-size:20px}.nav-item b,.side-bottom{display:none}main{margin:0;padding:22px 15px}.topbar{align-items:flex-start;gap:15px}.top-actions{flex-wrap:wrap;justify-content:flex-end}.date-button{font-size:11px}.export-button{font-size:0;width:36px;padding:0}.export-button span{font-size:17px}.filters{overflow:auto;padding-bottom:3px}.updated{display:none}.kpis{grid-template-columns:repeat(2,1fr);gap:9px}.kpi:last-child{grid-column:span 2}.kpi{min-height:112px;padding:14px}.kpi strong{font-size:20px}.panel{padding:16px}.line-chart{height:220px}.donut-wrap{gap:16px}.donut{width:125px}.donut>div{width:84px}.guest-stats>div{padding:0 10px}.guest-stats strong{font-size:16px}.guest-footer p{font-size:10px}.region-list>div{grid-template-columns:1fr 1fr .65fr}}
+.view{display:none}.view.active{display:block}.nav-item{border:0;text-align:left;width:100%;font:14px "Noto Sans SC",Arial}.hotel-picker{height:36px;border:1px solid var(--line);background:#fff;border-radius:5px;display:flex;align-items:center;gap:8px;padding:0 8px 0 11px;font-size:12px;color:#687a7f}.hotel-picker select{max-width:185px;border:0;background:#fff;color:#24383d;font:600 12px "Noto Sans SC",Arial;outline:0}.view-banner{display:flex;align-items:flex-start;justify-content:space-between;padding:3px 0 22px;border-bottom:1px solid var(--line);margin-bottom:18px}.view-banner h2{font-size:22px;margin:2px 0 7px}.view-description{font-size:12px;color:#718287;line-height:1.6}.data-chip,.source-state{font:11px "DM Mono";color:#527176;background:#edf7f6;border:1px solid #d5eae7;border-radius:4px;padding:5px 8px;white-space:nowrap}.hotel-grid{grid-template-columns:1.24fr .76fr}.hotel-list-panel{grid-column:span 2}.performance-chart{display:grid;gap:17px;margin:30px 0 22px}.performance-axis{display:grid;grid-template-columns:68px 1fr 95px;gap:10px;align-items:center;font-size:12px;color:#617277}.performance-axis b{display:block;height:12px;border-radius:3px;background:#edf2f1;overflow:hidden}.performance-axis i{display:block;height:100%;border-radius:3px;background:var(--teal)}.performance-axis .budget-fill{background:#9baeb0}.performance-axis em{font:12px "DM Mono";font-style:normal;color:#34484d;text-align:right}.performance-note{background:#f5f9f8;border-left:3px solid #e0a05e;padding:11px 12px;font-size:12px;line-height:1.6;color:#56696e}.workspace-list{margin-top:13px}.workspace-list>div{display:grid;grid-template-columns:28px 1fr auto;gap:9px;align-items:center;border-top:1px solid #edf1f0;padding:12px 0}.workspace-list>div>span{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#edf7f6;color:var(--teal-dark);font:11px "DM Mono"}.workspace-list p{display:grid;gap:2px;font-size:12px}.workspace-list small{font-size:10px;color:#87959a}.workspace-list button,.hotel-list button{border:0;background:transparent;color:var(--teal-dark);font-size:11px}.hotel-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px;margin-top:12px}.hotel-list button{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:11px 0;border-top:1px solid #edf1f0;text-align:left}.hotel-list button span{color:#34474b;font:600 12px "Noto Sans SC"}.hotel-list button b{font:11px "DM Mono";font-weight:400}.hotel-list button em{font:10px "DM Mono";font-style:normal}.revenue-bars{height:245px;margin:18px 0 0 33px;padding:18px 16px 0;border-left:1px solid #e9eeee;border-bottom:1px solid #e9eeee;display:flex;justify-content:space-around;align-items:flex-end;background:repeating-linear-gradient(to bottom,transparent 0,transparent 57px,#edf2f1 58px)}.bar-group{height:100%;display:grid;grid-template-rows:1fr auto auto;justify-items:center;gap:5px;min-width:95px;font-size:11px;color:#5f7075}.bar-stack{height:100%;display:flex;align-items:flex-end;gap:6px}.bar-stack i,.bar-stack b{width:18px;background:var(--teal);border-radius:3px 3px 0 0}.bar-stack b{background:#aababc}.bar-group small{font:10px "DM Mono";color:#819095}.analysis-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.upload-zone{min-height:285px;border:1.5px dashed #9fcac4;background:#fbfefd;display:grid;place-content:center;justify-items:center;text-align:center;padding:28px;transition:.18s}.upload-zone.dragging{border-color:var(--teal);background:#eefaf8}.upload-zone input{display:none}.upload-zone h2{margin:8px 0 6px}.upload-zone p{font-size:12px;color:#78898e;margin-bottom:17px}.upload-icon{width:38px;height:38px;display:grid;place-items:center;background:#e5f5f2;color:var(--teal-dark);border-radius:50%;font-size:23px}.outline-button{height:34px;border:1px solid #9bc9c4;background:#fff;color:var(--teal-dark);border-radius:4px;padding:0 11px;font-size:12px;font-weight:600}.process-list{list-style:none;padding:3px 0 0;margin:14px 0 0;display:grid;gap:15px}.process-list li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start}.process-list li>span{width:24px;height:24px;display:grid;place-items:center;border:1px solid #cce5e1;border-radius:50%;font:11px "DM Mono";color:var(--teal-dark)}.process-list b{font-size:12px}.process-list p{font-size:11px;line-height:1.5;color:#78898e;margin-top:3px}.task-panel{margin-top:14px}.file-list{margin-top:15px}.empty-state{border-top:1px solid #edf1f0;padding:17px 0 2px;font-size:12px;color:#7e8e92}.file-row{display:grid;grid-template-columns:28px 1fr auto;gap:9px;align-items:center;border-top:1px solid #edf1f0;padding:11px 0}.file-row>span{color:var(--teal-dark);font-size:17px}.file-row b{font-size:12px}.file-row p{margin-top:3px;font-size:10px;color:#87959a}.file-row button{border:0;background:transparent;color:#8c999d;font-size:20px}.disabled{opacity:.55;cursor:not-allowed}.skill-library{margin-top:25px}.section-row{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:13px}.section-row p{font-size:11px;color:#829095;margin-top:4px}.skill-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.skill-card{border:1px solid var(--line);background:#fff;border-radius:7px;padding:17px;min-height:165px;display:flex;flex-direction:column}.skill-tag{align-self:flex-start;background:#e3f4f1;color:#08716d;border-radius:3px;padding:3px 6px;font-size:10px}.skill-tag.blue{background:#e8f0f9;color:#396da5}.skill-tag.orange{background:#fff0df;color:#b96c1d}.skill-card h3{font-size:14px;margin:16px 0 7px}.skill-card p{font-size:11px;line-height:1.6;color:#78898e}.skill-card button{margin-top:auto;align-self:flex-start;border:0;background:transparent;color:#718187;padding:14px 0 0;font-size:11px}.news-controls{display:flex;gap:8px;align-items:center;margin-bottom:15px}.news-controls select{height:32px;border:1px solid var(--line);border-radius:4px;background:#fff;padding:0 9px;font:12px "Noto Sans SC";color:#53666b}.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.news-empty{min-height:216px;display:grid;place-content:center;text-align:center;padding:25px}.news-empty>span{font-size:23px;color:#79ada8;margin-bottom:8px}.news-empty b{font-size:13px}.news-empty p{max-width:310px;font-size:11px;line-height:1.7;color:#7b8b90;margin:6px 0 8px}.source-panel{margin-top:14px}.source-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:18px}.source-grid>div{border-left:2px solid #d3e9e5;padding-left:11px}.source-grid span{font:10px "DM Mono";color:var(--teal-dark)}.source-grid b{display:block;font-size:12px;margin:4px 0}.source-grid p{font-size:11px;line-height:1.6;color:#74858a}@media(max-width:1120px){.analysis-layout,.news-grid{grid-template-columns:1fr}.hotel-list-panel{grid-column:auto}.hotel-list{grid-template-columns:1fr}.hotel-picker select{max-width:135px}}@media(max-width:760px){.view-banner{display:grid;gap:11px}.hotel-picker{order:-1;width:100%;justify-content:space-between}.hotel-picker select{max-width:225px}.top-actions{width:100%}.top-actions .date-button{flex:1}.overview-grid,.hotel-grid{grid-template-columns:1fr}.analysis-layout,.news-grid{grid-template-columns:1fr}.skill-grid,.source-grid{grid-template-columns:1fr}.revenue-bars{margin-left:16px;height:215px;overflow:hidden}.bar-group{min-width:65px;font-size:10px}.bar-stack i,.bar-stack b{width:12px}.bar-group small{display:none}.performance-axis{grid-template-columns:58px 1fr 82px}.news-controls{overflow:auto;padding-bottom:3px}.news-controls .updated{display:none}}
 </style>
-    <style>.bar-actual rect{fill:#0f938d}.bar-budget rect{fill:#aababc}.x-axis{justify-content:space-around}.pace-bars div{grid-template-columns:60px 1fr 39px}.donut{background:conic-gradient(#0f938d 0 58.8%,#5d91c7 58.8% 95.6%,#dfa05d 95.6% 96.9%,#9a7cb1 96.9% 100%)}.donut strong{font-size:13px}</style>
+    <style>.hotel-picker[hidden]{display:none!important}</style>
   </head>
   <body>
     <aside class="sidebar">
       <div class="brand"><span class="brand-mark">GE</span><span>金鹰酒店</span></div>
       <nav aria-label="主导航">
-        <a class="nav-item active" href="#overview"><span>▦</span>经营总览</a>
-        <a class="nav-item" href="#booking"><span>◫</span>成本与利润</a>
-        <a class="nav-item" href="#hotels"><span>⌘</span>酒店网络</a>
-        <a class="nav-item" href="#guests"><span>◎</span>经营质量</a>
-        <a class="nav-item" href="#alerts"><span>△</span>经营关注 <b>3</b></a>
+        <button class="nav-item active" type="button" data-view="overview"><span>▦</span>经营总览</button>
+        <button class="nav-item" type="button" data-view="hotel"><span>⌘</span>单店概览</button>
+        <button class="nav-item" type="button" data-view="analysis"><span>◫</span>分析看板</button>
+        <button class="nav-item" type="button" data-view="news"><span>△</span>热点讯息 <b>待办</b></button>
       </nav>
-      <div class="side-bottom">
-        <div class="data-state"><i></i><span>数据同步正常</span><small>09:42</small></div>
-        <button class="avatar" aria-label="打开账户菜单">JW</button>
-      </div>
+      <div class="side-bottom"><div class="data-state"><i></i><span>数据同步正常</span><small>2026-06-30</small></div><button class="avatar" aria-label="打开账户菜单">JW</button></div>
     </aside>
-
     <main>
       <header class="topbar">
-        <div><p class="eyebrow">集团经营中心</p><h1>经营驾驶舱</h1></div>
-        <div class="top-actions">
-          <button class="icon-button" aria-label="查看通知">⌁<span class="notification"></span></button>
-          <button class="date-button" id="dateButton"><span>▣</span> 2026年1-6月 <span>⌄</span></button>
-          <button class="export-button" id="exportButton">导出汇总 <span>↓</span></button>
-        </div>
+        <div><p class="eyebrow" id="sectionEyebrow">集团经营中心</p><h1 id="pageTitle">经营驾驶舱</h1></div>
+        <div class="top-actions"><label class="hotel-picker" id="hotelPicker" for="hotelSelector" hidden><span>门店</span><select id="hotelSelector" aria-label="选择门店"></select></label><button class="date-button" id="dateButton"><span>▣</span> 2026年1-6月 <span>⌄</span></button><button class="export-button" id="exportButton">导出汇总 <span>↓</span></button></div>
       </header>
 
-      <section class="filters" aria-label="筛选条件">
-        <button class="filter active">全集团 <span>⌄</span></button>
-        <button class="filter">全部区域 <span>⌄</span></button>
-        <button class="filter">全部品牌 <span>⌄</span></button>
-        <span class="updated">数据期间：2026-01-01 至 2026-06-30</span>
+      <section class="view active" data-view-panel="overview">
+        <section class="filters" aria-label="经营总览筛选条件"><button class="filter active">全集团 <span>⌄</span></button><button class="filter">全部区域 <span>⌄</span></button><button class="filter">全部品牌 <span>⌄</span></button><span class="updated">数据期间：2026-01-01 至 2026-06-30</span></section>
+        <section class="kpis">
+          <article class="kpi"><div class="kpi-label">累计总收入 <button class="info" aria-label="单位：万元">i</button></div><strong>¥25,011.0<em>万</em></strong><p class="negative">↓ 6.5% <span>较预算</span></p></article><article class="kpi"><div class="kpi-label">平均出租率</div><strong>57.7<em>%</em></strong><p class="positive">↑ 3.6pt <span>较2025年同期</span></p></article><article class="kpi"><div class="kpi-label">平均房价</div><strong>¥450</strong><p class="negative">↓ 6.1% <span>较预算</span></p></article><article class="kpi"><div class="kpi-label">经营利润（GOP）</div><strong>¥9,087.2<em>万</em></strong><p class="negative">↓ 5.2% <span>较预算</span></p></article><article class="kpi"><div class="kpi-label">利润总额（NOP）</div><strong>¥2,494.0<em>万</em></strong><p class="negative">↓ 6.2% <span>较预算</span></p></article>
+        </section>
+        <section class="dashboard-grid overview-grid">
+          <article class="panel revenue-panel"><div class="panel-head"><div><h2>收入构成与预算达成</h2><p>2026年1-6月累计，单位：万元</p></div><button class="more" aria-label="更多收入分析">•••</button></div><div class="chart-meta"><span><i class="legend actual"></i>实际</span><span><i class="legend budget"></i>预算</span><span class="chart-total">总收入预算差额 ¥1,746.2万</span></div><div class="revenue-bars" aria-label="收入构成实际与预算对比"><div class="bar-group"><div class="bar-stack"><i style="height:92%"></i><b style="height:98%"></b></div><span>房务收入</span><small>14,703.8</small></div><div class="bar-group"><div class="bar-stack"><i style="height:58%"></i><b style="height:63%"></b></div><span>餐饮收入</span><small>9,214.4</small></div><div class="bar-group"><div class="bar-stack"><i style="height:4%"></i><b style="height:4%"></b></div><span>专项销售</span><small>329.0</small></div><div class="bar-group"><div class="bar-stack"><i style="height:6%"></i><b style="height:6%"></b></div><span>其他收入</span><small>763.9</small></div></div></article>
+          <article class="panel pace-panel"><div class="panel-head"><div><h2>关键成本与利润率</h2><p>实际与预算对比</p></div><button class="more" aria-label="更多成本分析">•••</button></div><div class="pace-stat"><strong>36.3<em>%</em></strong><span class="positive">↑ 0.5pt GOP率较预算</span></div><div class="pace-bars"><div><span>人力成本率</span><b><i style="width:71%"></i></b><em>28.6%</em></div><div><span>餐饮成本率</span><b><i style="width:95%"></i></b><em>38.0%</em></div><div><span>动力成本率</span><b><i style="width:14%"></i></b><em>5.7%</em></div><div><span>NOP率</span><b><i style="width:25%"></i></b><em>10.0%</em></div></div><div class="pace-callout"><span>!</span><p><b>餐饮收入</b> 预算达成 92.2%，低于预算 ¥782.5万</p></div></article>
+          <article class="panel portfolio-panel"><div class="panel-head"><div><h2>重点门店收入表现</h2><p>累计总收入，单位：万元</p></div><button class="text-action" data-go-view="hotel">查看单店</button></div><div class="region-list"><div><span class="region-name">河西金鹰世界</span><div class="region-data"><strong>¥5,059.8万</strong><span class="negative">↓ 3.8%</span></div><small>较预算</small></div><div><span class="region-name south">金鹰国际</span><div class="region-data"><strong>¥4,533.4万</strong><span class="negative">↓ 8.0%</span></div><small>较预算</small></div><div><span class="region-name north">南京金鹰尚美</span><div class="region-data"><strong>¥3,659.8万</strong><span class="negative">↓ 4.2%</span></div><small>较预算</small></div><div><span class="region-name west">昆山尚美</span><div class="region-data"><strong>¥2,716.1万</strong><span class="positive">↑ 2.6%</span></div><small>较预算</small></div></div></article>
+          <article class="panel channel-panel"><div class="panel-head"><div><h2>收入结构</h2><p>累计总收入构成</p></div></div><div class="donut-wrap"><div class="donut"><div><strong>¥25,011.0万</strong><span>累计总收入</span></div></div><ul><li><i class="direct"></i>房务收入 <b>58.8%</b></li><li><i class="ota"></i>餐饮收入 <b>36.8%</b></li><li><i class="corp"></i>专项销售 <b>1.3%</b></li><li><i class="group"></i>其他收入 <b>3.1%</b></li></ul></div></article>
+        </section>
       </section>
 
-      <section class="kpis" id="overview">
-        <article class="kpi"><div class="kpi-label">累计总收入 <button class="info" aria-label="单位：万元">i</button></div><strong>¥25,011.0<em>万</em></strong><p class="negative">↓ 6.5% <span>较预算</span></p></article>
-        <article class="kpi"><div class="kpi-label">平均出租率</div><strong>57.7<em>%</em></strong><p class="positive">↑ 3.6pt <span>较2025年同期</span></p></article>
-        <article class="kpi"><div class="kpi-label">平均房价</div><strong>¥450</strong><p class="negative">↓ 6.1% <span>较预算</span></p></article>
-        <article class="kpi"><div class="kpi-label">经营利润（GOP）</div><strong>¥9,087.2<em>万</em></strong><p class="negative">↓ 5.2% <span>较预算</span></p></article>
-        <article class="kpi"><div class="kpi-label">利润总额（NOP）</div><strong>¥2,494.0<em>万</em></strong><p class="negative">↓ 6.2% <span>较预算</span></p></article>
-      </section>
+      <section class="view" data-view-panel="hotel"><div class="view-banner"><div><p class="eyebrow">门店经营中心</p><h2 id="hotelName">河西金鹰世界酒店</h2><p class="view-description">累计经营表现及关键经营指标。右上角可切换门店。</p></div><span class="data-chip">数据期间：2026年1-6月</span></div><section class="kpis hotel-kpis"><article class="kpi"><div class="kpi-label">累计总收入</div><strong id="hotelRevenue">¥5,059.8<em>万</em></strong><p id="hotelVariance" class="negative">↓ 3.8% <span>较预算</span></p></article><article class="kpi"><div class="kpi-label">预算达成</div><strong id="hotelAttainment">96.2<em>%</em></strong><p><span>收入预算完成率</span></p></article><article class="kpi"><div class="kpi-label">经营状态</div><strong id="hotelStatus">关注</strong><p><span>基于收入预算差异</span></p></article><article class="kpi"><div class="kpi-label">对集团收入贡献</div><strong id="hotelContribution">20.2<em>%</em></strong><p><span>累计总收入占比</span></p></article><article class="kpi"><div class="kpi-label">对比范围</div><strong>预算</strong><p><span>2026年度累计口径</span></p></article></section><section class="dashboard-grid hotel-grid"><article class="panel hotel-performance"><div class="panel-head"><div><h2>经营表现</h2><p id="hotelPerformanceText">收入与预算差异</p></div><button class="text-action" data-go-view="analysis">进入分析看板</button></div><div class="performance-chart"><div class="performance-axis"><span>实际收入</span><b><i id="actualBar"></i></b><em id="actualAmount">¥5,059.8万</em></div><div class="performance-axis"><span>收入预算</span><b><i id="budgetBar" class="budget-fill"></i></b><em id="budgetAmount">¥5,259.7万</em></div></div><div class="performance-note" id="hotelNote">收入低于预算 ¥199.9万，建议关注客房与餐饮协同销售。</div></article><article class="panel"><div class="panel-head"><div><h2>门店工作区</h2><p>后续可按门店挂载专属分析模板</p></div></div><div class="workspace-list"><div><span>01</span><p><b>经营周报</b><small>待接入</small></p><button data-go-view="analysis">配置</button></div><div><span>02</span><p><b>收益管理</b><small>待接入</small></p><button data-go-view="analysis">配置</button></div><div><span>03</span><p><b>宾客评价</b><small>待接入</small></p><button data-go-view="analysis">配置</button></div></div></article><article class="panel hotel-list-panel"><div class="panel-head"><div><h2>全部门店</h2><p>点击即可切换查看</p></div></div><div class="hotel-list" id="hotelList"></div></article></section></section>
 
-      <section class="dashboard-grid">
-        <article class="panel revenue-panel">
-          <div class="panel-head"><div><h2>收入构成与预算达成</h2><p>2026年1-6月累计，单位：万元</p></div><button class="more" aria-label="更多收入分析">•••</button></div>
-          <div class="chart-meta"><span><i class="legend actual"></i>实际</span><span><i class="legend budget"></i>预算</span><span class="chart-total">总收入预算差额 ¥1,746.2万</span></div>
-          <div class="line-chart" aria-label="房务、餐饮、专项和其他收入实际与预算对比">
-            <div class="y-axis"><span>16,000</span><span>12,000</span><span>8,000</span><span>4,000</span><span>0</span></div>
-            <svg viewBox="0 0 760 250" preserveAspectRatio="none" role="img" aria-label="实际收入高于预算线">
-              <g class="gridlines"><path d="M0 15H760 M0 70H760 M0 125H760 M0 180H760 M0 235H760" /></g>
-              <g class="bar-actual"><rect x="74" y="33" width="38" height="202" rx="2"/><rect x="254" y="108" width="38" height="127" rx="2"/><rect x="434" y="230" width="38" height="5" rx="2"/><rect x="614" y="225" width="38" height="10" rx="2"/></g>
-              <g class="bar-budget"><rect x="118" y="19" width="38" height="216" rx="2"/><rect x="298" y="98" width="38" height="137" rx="2"/><rect x="478" y="230" width="38" height="5" rx="2"/><rect x="658" y="225" width="38" height="10" rx="2"/></g>
-            </svg>
-            <div class="x-axis"><span>房务收入</span><span>餐饮收入</span><span>专项销售</span><span>其他收入</span></div>
-          </div>
-        </article>
+      <section class="view" data-view-panel="analysis"><div class="view-banner"><div><p class="eyebrow">分析看板库</p><h2>拖入文件，生成分析入口</h2><p class="view-description">这里用于承载你后续沉淀的 Skill 看板。文件只在当前浏览器中处理，不会自动公开或上传。</p></div><span class="data-chip">支持 XLSX / CSV / PDF</span></div><section class="analysis-layout"><article class="upload-zone" id="uploadZone"><input id="fileInput" type="file" multiple accept=".xlsx,.xls,.csv,.pdf" /><span class="upload-icon">↓</span><h2>拖动文件到这里</h2><p>或点击选择文件，将作为分析任务的输入资料</p><button class="outline-button" type="button" id="chooseFileButton">选择文件</button></article><article class="panel analysis-guide"><div class="panel-head"><div><h2>分析任务流程</h2><p>框架已准备好，后续按 Skill 扩展</p></div></div><ol class="process-list"><li><span>1</span><div><b>导入资料</b><p>拖入经营表、评价导出或竞品资料</p></div></li><li><span>2</span><div><b>选择 Skill 看板</b><p>为文件匹配收益、成本、市场等分析能力</p></div></li><li><span>3</span><div><b>导出结论</b><p>生成分析页或下载标准化报告</p></div></li></ol></article></section><section class="panel task-panel"><div class="panel-head"><div><h2>本次分析任务</h2><p id="taskSummary">尚未导入文件</p></div><button class="export-button disabled" id="analysisExportButton" disabled>导出分析 <span>↓</span></button></div><div class="file-list" id="fileList"><div class="empty-state">导入文件后，这里会显示分析任务和可挂载的 Skill 看板。</div></div></section><section class="skill-library"><div class="section-row"><div><h2>预置 Skill 看板</h2><p>以下为框架占位，后续可以不断增加</p></div><button class="outline-button" type="button" id="newSkillButton">+ 新建看板位</button></div><div class="skill-grid" id="skillGrid"><article class="skill-card"><span class="skill-tag">经营</span><h3>经营日报复盘</h3><p>收入、客房、餐饮与预算差异</p><button>等待资料</button></article><article class="skill-card"><span class="skill-tag blue">收益</span><h3>收益管理诊断</h3><p>出租率、房价、渠道及需求节奏</p><button>等待资料</button></article><article class="skill-card"><span class="skill-tag orange">市场</span><h3>竞业市场扫描</h3><p>竞品动态、价格与城市活动</p><button>等待资料</button></article></div></section></section>
 
-        <article class="panel pace-panel" id="booking">
-          <div class="panel-head"><div><h2>关键成本与利润率</h2><p>实际与预算对比</p></div><button class="more" aria-label="更多成本分析">•••</button></div>
-          <div class="pace-stat"><strong>36.3<em>%</em></strong><span class="positive">↑ 0.5pt GOP率较预算</span></div>
-          <div class="pace-bars">
-            <div><span>人力成本率</span><b><i style="width:71%"></i></b><em>28.6%</em></div><div><span>餐饮成本率</span><b><i style="width:95%"></i></b><em>38.0%</em></div><div><span>动力成本率</span><b><i style="width:14%"></i></b><em>5.7%</em></div><div><span>NOP率</span><b><i style="width:25%"></i></b><em>10.0%</em></div>
-          </div>
-          <div class="pace-callout"><span>!</span><p><b>餐饮收入</b> 预算达成 92.2%，低于预算 ¥782.5万</p><button aria-label="查看经营关注">›</button></div>
-        </article>
-
-        <article class="panel portfolio-panel" id="hotels">
-          <div class="panel-head"><div><h2>重点酒店收入表现</h2><p>累计总收入，单位：万元</p></div><button class="text-action">全部酒店</button></div>
-          <div class="region-list">
-            <div><span class="region-name east">河西金鹰世界</span><div class="region-data"><strong>¥5,059.8万</strong><span class="negative">↓ 3.8%</span></div><small>较预算</small></div>
-            <div><span class="region-name south">金鹰国际</span><div class="region-data"><strong>¥4,533.4万</strong><span class="negative">↓ 8.0%</span></div><small>较预算</small></div>
-            <div><span class="region-name north">南京金鹰尚美</span><div class="region-data"><strong>¥3,659.8万</strong><span class="negative">↓ 4.2%</span></div><small>较预算</small></div>
-            <div><span class="region-name west">昆山尚美</span><div class="region-data"><strong>¥2,716.1万</strong><span class="positive">↑ 2.6%</span></div><small>较预算</small></div>
-          </div>
-        </article>
-
-        <article class="panel channel-panel">
-          <div class="panel-head"><div><h2>收入结构</h2><p>累计总收入构成</p></div><button class="more" aria-label="更多收入结构分析">•••</button></div>
-          <div class="donut-wrap"><div class="donut"><div><strong>¥25,011.0万</strong><span>累计总收入</span></div></div><ul><li><i class="direct"></i>房务收入 <b>58.8%</b></li><li><i class="ota"></i>餐饮收入 <b>36.8%</b></li><li><i class="corp"></i>专项销售 <b>1.3%</b></li><li><i class="group"></i>其他收入 <b>3.1%</b></li></ul></div>
-        </article>
-
-        <article class="panel alert-panel" id="alerts">
-          <div class="panel-head"><div><h2>经营关注事项</h2><p>按累计预算达成与利润表现识别</p></div><button class="text-action">全部 3 项</button></div>
-          <div class="alert-list">
-            <button class="alert-row high"><span class="alert-icon">!</span><div><b>芜湖金鹰尚美酒店 NOP 为负</b><p>1-5月累计 NOP -¥342.6万</p></div><em>高</em><span>›</span></button>
-            <button class="alert-row medium"><span class="alert-icon">!</span><div><b>国仕达酒店收入低于预算</b><p>累计预算达成 73.8%，差额 ¥156.6万</p></div><em>中</em><span>›</span></button>
-            <button class="alert-row medium"><span class="alert-icon">!</span><div><b>盐城金鹰尚美酒店收入承压</b><p>累计预算达成 80.2%，差额 ¥484.1万</p></div><em>中</em><span>›</span></button>
-          </div>
-        </article>
-
-        <article class="panel guest-panel" id="guests">
-          <div class="panel-head"><div><h2>经营质量</h2><p>核心利润率与 EBITDA</p></div><button class="more" aria-label="更多经营质量数据">•••</button></div>
-          <div class="guest-stats"><div><strong>73.3<em>%</em></strong><span>客房利润率</span><p class="positive">↑ 0.6pt 较预算</p></div><div><strong>27.2<em>%</em></strong><span>餐饮利润率</span><p class="positive">↑ 0.1pt 较预算</p></div><div><strong>¥7,549.2<em>万</em></strong><span>EBITDA</span><p class="negative">↓ 6.3% 较预算</p></div></div>
-          <div class="guest-footer"><span class="mini-avatar a1">房</span><span class="mini-avatar a2">餐</span><span class="mini-avatar a3">利</span><p>房务收入占比 <b>58.8%</b>，餐饮收入占比 <b>36.8%</b></p><button>查看</button></div>
-        </article>
-      </section>
+      <section class="view" data-view-panel="news"><div class="view-banner"><div><p class="eyebrow">市场情报中心</p><h2>热点讯息</h2><p class="view-description">聚合近三个月的城市事件与竞业酒店资讯，为门店经营与收益决策提供线索。</p></div><button class="outline-button" id="refreshNewsButton" type="button">刷新采集状态</button></div><section class="news-controls"><button class="filter active" data-news-filter="all">全部</button><button class="filter" data-news-filter="city">城市事件</button><button class="filter" data-news-filter="competitor">竞业资讯</button><select id="newsCitySelector" aria-label="筛选城市"><option>全部城市</option><option>南京</option><option>昆山</option><option>盐城</option><option>马鞍山</option><option>芜湖</option><option>昆明</option></select><span class="updated">采集窗口：近 90 天</span></section><section class="news-grid"><article class="panel"><div class="panel-head"><div><h2>城市事件</h2><p>展会、演出、赛事、交通与政策动态</p></div><span class="source-state">待接入</span></div><div class="news-empty"><span>⌁</span><b>城市事件源待配置</b><p>后续可接入本地文旅、会展场馆、票务和政府公开信息源。</p><button class="text-action" id="addCitySource">添加采集源</button></div></article><article class="panel"><div class="panel-head"><div><h2>竞业酒店资讯</h2><p>开业、焕新、营销、价格与评价变化</p></div><span class="source-state">待接入</span></div><div class="news-empty"><span>⌘</span><b>竞业资讯源待配置</b><p>后续可挂载指定竞品名单、OTA 页面、品牌新闻与社交渠道。</p><button class="text-action" id="addCompetitorSource">配置竞业名单</button></div></article></section><section class="panel source-panel"><div class="panel-head"><div><h2>采集配置</h2><p>先定义范围，再接入各城市与竞品的数据源</p></div></div><div class="source-grid"><div><span>01</span><b>关注城市</b><p>南京、昆山、盐城、马鞍山、芜湖、昆明</p></div><div><span>02</span><b>事件类型</b><p>会展演艺、赛事节庆、交通、政策、商圈活动</p></div><div><span>03</span><b>竞业维度</b><p>新品开业、促销、房价、评价、品牌营销</p></div></div></section></section>
     </main>
-    <div class="toast" id="toast" role="status">经营汇总已生成，正在准备下载</div>
-    <script>const toast = document.getElementById('toast');
-document.getElementById('exportButton').addEventListener('click', () => {
+    <div class="toast" id="toast" role="status"></div>
+    <script>const hotels = [
+  { name: '河西金鹰世界酒店', revenue: 5059.75, variance: -3.8 },
+  { name: '金鹰国际酒店', revenue: 4533.4, variance: -8.0 },
+  { name: '南京金鹰尚美酒店', revenue: 3659.8, variance: -4.2 },
+  { name: '珠江壹号酒店', revenue: 2273.25, variance: -9.6 },
+  { name: '国仕达酒店', revenue: 441.81, variance: -26.2 },
+  { name: '盐城金鹰尚美酒店', revenue: 1960.38, variance: -19.8 },
+  { name: '昆山金鹰尚美酒店', revenue: 2716.14, variance: 2.6 },
+  { name: '马鞍山金鹰尚美酒店', revenue: 2196.03, variance: -4.4 },
+  { name: '芜湖金鹰尚美酒店', revenue: 756.17, variance: -9.7 },
+  { name: '昆明金鹰尚美酒店', revenue: 1414.33, variance: 0.4 },
+];
+
+const formatMoney = (value) => `¥${value.toLocaleString('zh-CN', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}万`;
+const selector = document.getElementById('hotelSelector');
+const toast = document.getElementById('toast');
+let activeView = 'overview';
+let importedFiles = [];
+
+selector.innerHTML = '<option value="group">全集团</option>' + hotels.map((hotel, index) => `<option value="${index}">${hotel.name}</option>`).join('');
+
+function showToast(message) {
+  toast.textContent = message;
   toast.classList.add('show');
   window.setTimeout(() => toast.classList.remove('show'), 2600);
+}
+
+function switchView(view) {
+  activeView = view;
+  document.querySelectorAll('[data-view-panel]').forEach((panel) => panel.classList.toggle('active', panel.dataset.viewPanel === view));
+  document.querySelectorAll('.nav-item').forEach((item) => item.classList.toggle('active', item.dataset.view === view));
+  document.getElementById('hotelPicker').hidden = view !== 'hotel';
+  const titles = { overview: ['集团经营中心', '经营驾驶舱'], hotel: ['门店经营中心', '单店概览'], analysis: ['运营能力中心', '分析看板'], news: ['市场情报中心', '热点讯息'] };
+  document.getElementById('sectionEyebrow').textContent = titles[view][0];
+  document.getElementById('pageTitle').textContent = titles[view][1];
+  if (view === 'hotel' && selector.value === 'group') selector.value = '0';
+  updateHotelSelection();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderHotel(hotel) {
+  const budget = hotel.revenue / (1 + hotel.variance / 100);
+  const attainment = hotel.revenue / budget * 100;
+  const contribution = hotel.revenue / 25011.05 * 100;
+  const direction = hotel.variance >= 0 ? '↑' : '↓';
+  const state = hotel.variance >= 0 ? '良好' : hotel.variance > -8 ? '关注' : '承压';
+  document.getElementById('hotelName').textContent = hotel.name;
+  document.getElementById('hotelRevenue').innerHTML = `${formatMoney(hotel.revenue)}<em></em>`;
+  const variance = document.getElementById('hotelVariance');
+  variance.className = hotel.variance >= 0 ? 'positive' : 'negative';
+  variance.innerHTML = `${direction} ${Math.abs(hotel.variance).toFixed(1)}% <span>较预算</span>`;
+  document.getElementById('hotelAttainment').innerHTML = `${attainment.toFixed(1)}<em>%</em>`;
+  document.getElementById('hotelStatus').textContent = state;
+  document.getElementById('hotelContribution').innerHTML = `${contribution.toFixed(1)}<em>%</em>`;
+  document.getElementById('hotelPerformanceText').textContent = `实际收入 ${formatMoney(hotel.revenue)}，预算 ${formatMoney(budget)}`;
+  document.getElementById('actualAmount').textContent = formatMoney(hotel.revenue);
+  document.getElementById('budgetAmount').textContent = formatMoney(budget);
+  document.getElementById('actualBar').style.width = `${Math.min(attainment, 100)}%`;
+  document.getElementById('budgetBar').style.width = '100%';
+  const difference = Math.abs(hotel.revenue - budget);
+  document.getElementById('hotelNote').textContent = hotel.variance >= 0 ? `收入超预算 ${formatMoney(difference)}，建议复盘可复制的客源及渠道策略。` : `收入低于预算 ${formatMoney(difference)}，建议结合需求节奏、房价和餐饮销售进一步分析。`;
+}
+
+function renderHotelList() {
+  document.getElementById('hotelList').innerHTML = hotels.map((hotel, index) => {
+    const state = hotel.variance >= 0 ? 'positive' : 'negative';
+    const direction = hotel.variance >= 0 ? '↑' : '↓';
+    return `<button type="button" data-hotel-index="${index}"><span>${hotel.name}</span><b>${formatMoney(hotel.revenue)}</b><em class="${state}">${direction} ${Math.abs(hotel.variance).toFixed(1)}%</em></button>`;
+  }).join('');
+}
+
+function updateHotelSelection() {
+  if (selector.value !== 'group') renderHotel(hotels[Number(selector.value)]);
+}
+
+document.querySelectorAll('.nav-item, [data-go-view]').forEach((item) => item.addEventListener('click', () => switchView(item.dataset.view || item.dataset.goView)));
+selector.addEventListener('change', () => { if (activeView === 'hotel' && selector.value === 'group') selector.value = '0'; updateHotelSelection(); });
+document.getElementById('hotelList').addEventListener('click', (event) => {
+  const button = event.target.closest('[data-hotel-index]');
+  if (!button) return;
+  selector.value = button.dataset.hotelIndex;
+  updateHotelSelection();
+  showToast(`已切换至 ${hotels[Number(selector.value)].name}`);
 });
-document.querySelectorAll('.filter, .nav-item').forEach((item) => {
-  item.addEventListener('click', (event) => {
-    if (item.classList.contains('filter')) {
-      document.querySelectorAll('.filter').forEach((filter) => filter.classList.remove('active'));
-      item.classList.add('active');
-    }
-    if (item.classList.contains('nav-item')) {
-      event.preventDefault();
-      document.querySelectorAll('.nav-item').forEach((nav) => nav.classList.remove('active'));
-      item.classList.add('active');
-      document.querySelector(item.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
+document.getElementById('exportButton').addEventListener('click', () => showToast('经营汇总已生成，正在准备下载'));
+document.querySelectorAll('.filter').forEach((item) => item.addEventListener('click', () => {
+  const container = item.parentElement;
+  container.querySelectorAll('.filter').forEach((filter) => filter.classList.remove('active'));
+  item.classList.add('active');
+}));
+
+const uploadZone = document.getElementById('uploadZone');
+const fileInput = document.getElementById('fileInput');
+const fileList = document.getElementById('fileList');
+const taskSummary = document.getElementById('taskSummary');
+const analysisExportButton = document.getElementById('analysisExportButton');
+
+function renderFiles(files) {
+  importedFiles = [...importedFiles, ...files];
+  taskSummary.textContent = `已导入 ${importedFiles.length} 个文件，可选择 Skill 看板开始分析`;
+  analysisExportButton.disabled = false;
+  analysisExportButton.classList.remove('disabled');
+  fileList.innerHTML = importedFiles.map((file, index) => `<div class="file-row"><span>▤</span><div><b>${file.name}</b><p>${(file.size / 1024).toFixed(1)} KB · 等待选择分析 Skill</p></div><button type="button" data-remove-file="${index}" aria-label="移除文件">×</button></div>`).join('');
+}
+
+uploadZone.addEventListener('dragover', (event) => { event.preventDefault(); uploadZone.classList.add('dragging'); });
+uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('dragging'));
+uploadZone.addEventListener('drop', (event) => { event.preventDefault(); uploadZone.classList.remove('dragging'); renderFiles([...event.dataTransfer.files]); });
+uploadZone.addEventListener('click', () => fileInput.click());
+document.getElementById('chooseFileButton').addEventListener('click', (event) => { event.stopPropagation(); fileInput.click(); });
+fileInput.addEventListener('change', () => renderFiles([...fileInput.files]));
+fileList.addEventListener('click', (event) => {
+  const button = event.target.closest('[data-remove-file]');
+  if (!button) return;
+  importedFiles.splice(Number(button.dataset.removeFile), 1);
+  if (importedFiles.length) renderFiles([]);
+  else {
+    taskSummary.textContent = '尚未导入文件';
+    fileList.innerHTML = '<div class="empty-state">导入文件后，这里会显示分析任务和可挂载的 Skill 看板。</div>';
+    analysisExportButton.disabled = true;
+    analysisExportButton.classList.add('disabled');
+  }
 });
+analysisExportButton.addEventListener('click', () => showToast('分析导出框架已生成，等待绑定具体 Skill'));
+document.getElementById('newSkillButton').addEventListener('click', () => {
+  document.getElementById('skillGrid').insertAdjacentHTML('beforeend', '<article class="skill-card draft"><span class="skill-tag">新建</span><h3>未命名 Skill 看板</h3><p>待配置分析逻辑与输出格式</p><button>配置中</button></article>');
+  showToast('已创建一个新的 Skill 看板位');
+});
+document.getElementById('refreshNewsButton').addEventListener('click', () => showToast('采集框架已刷新，尚未配置外部资讯源'));
+document.getElementById('addCitySource').addEventListener('click', () => showToast('城市事件采集源配置入口已预留'));
+document.getElementById('addCompetitorSource').addEventListener('click', () => showToast('竞业酒店名单配置入口已预留'));
+
+renderHotelList();
+renderHotel(hotels[0]);
 </script>
   </body>
 </html>
