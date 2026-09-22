@@ -1,5 +1,5 @@
 {
-  "lookbackDays": 90,
+  "lookaheadMonths": 3,
   "maxItemsPerHotel": 4,
   "cities": [
     {
