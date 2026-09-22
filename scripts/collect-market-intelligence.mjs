@@ -1,7 +1,11 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
-const apiKey = process.env.OPENAI_API_KEY;
-if (!apiKey) throw new Error('OPENAI_API_KEY is not configured.');
+const apiKey = process.env.LLM_API_KEY;
+const baseUrl = (process.env.LLM_BASE_URL || '').replace(/\/$/, '');
+const model = process.env.LLM_MODEL;
+if (!apiKey) throw new Error('LLM_API_KEY is not configured.');
+if (!baseUrl) throw new Error('LLM_BASE_URL is not configured.');
+if (!model) throw new Error('LLM_MODEL is not configured.');
 
 const config = JSON.parse(await readFile('config/market-intelligence.json', 'utf8'));
 const today = new Date().toISOString().slice(0, 10);
@@ -39,16 +43,16 @@ async function collectCity({ name: city, hotels }) {
 只输出如下 JSON，不要 Markdown：
 {"items":[{"type":"city 或 competitor","hotels":["相关酒店"],"title":"标题","summary":"摘要","impact":"高/中/低","date":"YYYY-MM-DD","sourceTitle":"来源名称","sourceUrl":"https://..."}]}`;
 
-  const response = await fetch('https://api.openai.com/v1/responses', {
+  const response = await fetch(`${baseUrl}/responses`, {
     method: 'POST',
     headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: 'gpt-5-mini',
+      model,
       tools: [{ type: 'web_search' }],
       input: prompt
     })
   });
-  if (!response.ok) throw new Error(`OpenAI request failed for ${city}: ${response.status} ${await response.text()}`);
+  if (!response.ok) throw new Error(`LLM request failed for ${city}: ${response.status} ${await response.text()}`);
   const payload = await response.json();
   const output = payload.output_text || payload.output?.flatMap((entry) => entry.content || []).map((part) => part.text || part.value || '').join('') || '';
   if (!output.trim()) throw new Error(`Empty AI response for ${city}.`);
