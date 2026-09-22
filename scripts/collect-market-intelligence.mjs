@@ -50,13 +50,20 @@ async function collectCity({ name: city, hotels }) {
   });
   if (!response.ok) throw new Error(`OpenAI request failed for ${city}: ${response.status} ${await response.text()}`);
   const payload = await response.json();
-  const output = payload.output_text || payload.output?.flatMap((entry) => entry.content || []).map((part) => part.text || '').join('') || '';
-  return asItems(JSON.parse(stripCodeFence(output)), city);
+  const output = payload.output_text || payload.output?.flatMap((entry) => entry.content || []).map((part) => part.text || part.value || '').join('') || '';
+  if (!output.trim()) throw new Error(`Empty AI response for ${city}.`);
+  try {
+    return asItems(JSON.parse(stripCodeFence(output)), city);
+  } catch (error) {
+    throw new Error(`Invalid AI response for ${city}: ${error.message}; preview=${output.slice(0, 300)}`);
+  }
 }
 
 const results = await Promise.allSettled(config.cities.map(collectCity));
 const items = results.flatMap((result) => result.status === 'fulfilled' ? result.value : []);
 const failedCities = results.flatMap((result, index) => result.status === 'rejected' ? [{ city: config.cities[index].name, error: result.reason.message }] : []);
+
+for (const failed of failedCities) console.warn(`Collection failed for ${failed.city}: ${failed.error}`);
 
 await writeFile('data/market-intelligence.json', `${JSON.stringify({
   generatedAt: new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false }),
@@ -67,4 +74,4 @@ await writeFile('data/market-intelligence.json', `${JSON.stringify({
   items
 }, null, 2)}\n`);
 
-if (!items.length) throw new Error('No verified market intelligence items were generated.');
+if (!items.length) throw new Error(`No verified market intelligence items were generated. ${failedCities.map((item) => `${item.city}: ${item.error}`).join(' | ')}`);
