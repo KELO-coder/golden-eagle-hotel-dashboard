@@ -1,6 +1,6 @@
 {
   "lookbackDays": 90,
-  "maxItemsPerCity": 6,
+  "maxItemsPerHotel": 4,
   "cities": [
     {
       "name": "南京",
