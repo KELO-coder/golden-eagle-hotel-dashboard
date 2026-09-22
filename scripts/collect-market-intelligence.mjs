@@ -9,7 +9,9 @@ if (!model) throw new Error('LLM_MODEL is not configured.');
 
 const config = JSON.parse(await readFile('config/market-intelligence.json', 'utf8'));
 const today = new Date().toISOString().slice(0, 10);
-const startDate = new Date(Date.now() - config.lookbackDays * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+const endDateValue = new Date();
+endDateValue.setMonth(endDateValue.getMonth() + config.lookaheadMonths);
+const endDate = endDateValue.toISOString().slice(0, 10);
 
 function stripCodeFence(value) {
   return value.trim().replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/, '');
@@ -32,13 +34,13 @@ function asItems(value, city, hotel) {
 }
 
 async function collectHotel({ city, hotel }) {
-  const prompt = `你是中国酒店市场情报分析师。请使用网络搜索，检索 ${city} 在 ${startDate} 至 ${today} 期间、与酒店“${hotel}”直接相关的市场讯息。
+  const prompt = `你是中国酒店市场情报分析师。请使用网络搜索，检索 ${city} 在 ${today} 至 ${endDate} 期间、与酒店“${hotel}”直接相关的已官宣未来市场讯息。
 
 重点寻找两类可核验事实：
 1. city：城市事件，包括会展、演出、赛事、交通、政策、商圈活动，以及可能影响酒店需求的公开事件。
 2. competitor：该酒店周边或同城中高端竞业酒店的开业、焕新、促销、品牌营销、价格策略或评价变化。
 
-只保留有明确公开来源链接且发生日期在此窗口内的讯息。不要编造、不要重复、不要把推测写成事实。只选择与“${hotel}”所在商圈、周边、同城需求或竞业直接有关的信息。每条 summary 用中文说明“发生了什么 + 可能的酒店经营影响”。每类最多 ${config.maxItemsPerHotel} 条。
+只保留有明确公开来源链接、且计划发生日期在此窗口内的讯息。重点检索已公布的会展、演出、赛事、节庆、交通投运、商圈活动，以及竞业酒店未来开业、焕新、促销和品牌活动。不要编造、不要重复、不要把推测写成事实。只选择与“${hotel}”所在商圈、周边、同城需求或竞业直接有关的信息。每条 summary 用中文说明“将发生什么 + 可能的酒店经营影响”。每类最多 ${config.maxItemsPerHotel} 条。
 
 只输出如下 JSON，不要 Markdown：
 {"items":[{"type":"city 或 competitor","title":"标题","summary":"摘要","impact":"高/中/低","date":"YYYY-MM-DD","sourceTitle":"来源名称","sourceUrl":"https://..."}]}`;
@@ -92,7 +94,7 @@ for (const target of targets) {
 await writeFile('data/market-intelligence.json', `${JSON.stringify({
   generatedAt: new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false }),
   generatedDate: today,
-  lookbackDays: config.lookbackDays,
+  lookaheadMonths: config.lookaheadMonths,
   itemCount: items.length,
   failedHotels,
   items
